@@ -1,0 +1,11 @@
+# This code uses R to create a box plot of diamond price based on color and then sets the appropriate cartisian parameters to best view the data. 
+#Create boxplo from the "Diamonds" data set part of the ggplot package in R that compares color and price
+qplot(x = color, y= price, data = diamonds, 
+      color = color, geom = 'boxplot', 
+#Names the graph and axis      
+      main = "Boxplot of Diamond Prices by Color", xlab = "Color of Diamond", ylab = "Price of Diamond ($)"
+      )+
+#Sets the cartisian coordinates to best demonstrate the relationship
+  coord_cartesian(ylim = c(0, 8500))
+# Saves the image 
+ggsave('priceBoxPlot.png')
